@@ -26,7 +26,7 @@ jobs:
           "$(python -c "import platform;print(platform.python_version())")" \
           >> $GITHUB_ENV
       - name: Cache linting environments
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: |
             ${{ env.PIP_CACHE_DIR }}
@@ -94,7 +94,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Cache testing environments
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.4
         with:
           path: ${{ env.PIP_CACHE_DIR }}
           key: "test-${{ runner.os }}-\
